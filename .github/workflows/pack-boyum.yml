@@ -1,0 +1,14 @@
+name: Build and Release H5P content type
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  pack-and-archive:
+    runs-on: ubuntu-latest
+    name: Pack and archive
+    steps:
+      - uses: actions/checkout@v3
+      - uses: boyum/pack-h5p-action@v1.0.0
